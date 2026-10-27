@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Krishnu Cotton Sarees</title>
 <meta name="description" content="Krishnu Cotton Sarees customer ledger">
-<meta name="theme-color" content="#0f4a2c">
+<meta name="theme-color" content="#8a0f45">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Krishnu">
@@ -24,8 +24,8 @@ img{max-width:100%}
 /* Layout: Krishnu Cotton Sarees ledger — handloom green header edged with a gold–magenta saree border; customer list pane + ledger pane side by side on wide screens, one pane at a time on phones */
 :root{
   --bg:#f7f3e9; --surface:#ffffff; --surface-2:#fbf8f1; --ink:#14231b; --muted:#5f6b62; --line:#e6dfcf;
-  --brand:#0f4a2c; --brand-ink:#ffffff; --brand-soft:rgba(255,255,255,.75);
-  --primary:#0f5a34; --primary-ink:#ffffff; --tint:#e8f1e9;
+  --brand:#8a0f45; --brand-ink:#ffffff; --brand-soft:rgba(255,255,255,.75);
+  --primary:#a3134f; --primary-ink:#ffffff; --tint:#fbe9f0;
   --zari:#c59a2e; --zari-soft:#f6ecd0; --rose:#b0124f;
   --due:#b0124f; --due-soft:#fbe7ee; --ok:#13734a; --ok-soft:#e4f3ea;
   --shadow:0 1px 2px rgba(20,40,25,.06),0 8px 24px rgba(20,40,25,.07);
@@ -35,15 +35,15 @@ img{max-width:100%}
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
   --bg:#0b1510; --surface:#122019; --surface-2:#172820; --ink:#eef3ee; --muted:#9fb0a5; --line:#24382d;
-  --brand:#0a2e1c; --brand-ink:#ffffff; --brand-soft:rgba(255,255,255,.72);
-  --primary:#7fd3a3; --primary-ink:#06170e; --tint:#1a3326;
+  --brand:#4a0826; --brand-ink:#ffffff; --brand-soft:rgba(255,255,255,.72);
+  --primary:#f39ac0; --primary-ink:#2a0716; --tint:#3a1a28;
   --zari:#e2bb55; --zari-soft:#352c12; --rose:#f06c9b;
   --due:#ff8fb3; --due-soft:#3a1424; --ok:#5fd39a; --ok-soft:#12301f;
   --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.3); color-scheme:dark}}
 :root[data-theme="dark"]{
   --bg:#0b1510; --surface:#122019; --surface-2:#172820; --ink:#eef3ee; --muted:#9fb0a5; --line:#24382d;
-  --brand:#0a2e1c; --brand-ink:#ffffff; --brand-soft:rgba(255,255,255,.72);
-  --primary:#7fd3a3; --primary-ink:#06170e; --tint:#1a3326;
+  --brand:#4a0826; --brand-ink:#ffffff; --brand-soft:rgba(255,255,255,.72);
+  --primary:#f39ac0; --primary-ink:#2a0716; --tint:#3a1a28;
   --zari:#e2bb55; --zari-soft:#352c12; --rose:#f06c9b;
   --due:#ff8fb3; --due-soft:#3a1424; --ok:#5fd39a; --ok-soft:#12301f;
   --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.3); color-scheme:dark}
@@ -65,7 +65,7 @@ svg{display:block}
 .zari{height:10px;background:
   linear-gradient(to bottom,var(--zari) 0 2px,transparent 2px 8px,var(--zari) 8px),
   radial-gradient(circle at 5px 5px,var(--zari) 0 1.6px,transparent 2px) 0 0/10px 10px,
-  var(--rose)}
+  #0f5a34}
 
 /* ---------- top bar ---------- */
 .top{position:sticky;top:env(safe-area-inset-top,0px);z-index:8;background:var(--brand);color:var(--brand-ink)}
@@ -375,7 +375,7 @@ button.lrow:hover{background:var(--surface-2)}
 
 /* ================= colourful mobile-first layer ================= */
 :root{
-  --g-brand:linear-gradient(135deg,#0d4429 0%,#12663c 55%,#0c5b57 100%);
+  --g-brand:linear-gradient(135deg,#6e0b38 0%,#a3134f 55%,#c2185b 100%);
   --g-rose:linear-gradient(135deg,#a50f4a 0%,#d6336c 100%);
   --g-gold:linear-gradient(135deg,#a8740f 0%,#d6a52f 100%);
   --g-peacock:linear-gradient(135deg,#0b5468 0%,#1590a8 100%);
@@ -505,6 +505,13 @@ button.lrow:hover{background:var(--surface-2)}
   .kpis > .kpi:last-child:nth-child(odd){grid-column:1/-1}
   .kpi b{font-size:22px}
 }
+
+/* magenta theme extras */
+.g-leaf.kpi{background:var(--g-leaf);color:#fff;border-color:transparent!important;position:relative;overflow:hidden;isolation:isolate}
+.g-leaf.kpi .eyebrow,.g-leaf.kpi small,.g-leaf.kpi span{color:rgba(255,255,255,.85)!important}
+.g-leaf.kpi b{color:#fff!important}
+.stat.hero::after{background:linear-gradient(to right,var(--zari) 0 2px,#0f5a34 2px 8px,var(--zari) 8px)!important}
+.fab{background:var(--g-gold)!important;box-shadow:0 12px 26px rgba(168,116,15,.4)!important}
 </style>
 <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js"></script>
@@ -745,7 +752,7 @@ function reportsPane(){
   <div class="kpis">
     <div class="kpi brand"><span class="eyebrow">Sales</span><b class="num" data-count="${salesAmt}">${rs(salesAmt)}</b><small>${pcs} sarees sold</small></div>
     <div class="kpi g-gold"><span class="eyebrow">Received</span><b class="num" style="color:var(--ok)">${rs(recAmt)}</b><small>${pays.length} payments</small></div>
-    <div class="kpi g-rose"><span class="eyebrow">Profit</span><b class="num ${profit<0?"loss":"profit"}">${rs(profit)}</b><small>${costedSales?Math.round(profit/costedSales*100)+"% margin":"No buying price yet"}${noCost?` · ${noCost} old sale${noCost>1?"s":""} without buying price`:""}</small></div>
+    <div class="kpi g-leaf"><span class="eyebrow">Profit</span><b class="num ${profit<0?"loss":"profit"}">${rs(profit)}</b><small>${costedSales?Math.round(profit/costedSales*100)+"% margin":"No buying price yet"}${noCost?` · ${noCost} old sale${noCost>1?"s":""} without buying price`:""}</small></div>
     <div class="kpi g-peacock"><span class="eyebrow">Outstanding now</span><b class="num" style="color:var(--due)">${rs(due)}</b><small>across all customers</small></div>
   </div>
   <div class="panel"><h3>Monthly sales</h3><p class="note">Recent months with activity. Profit counts only sales that have a buying price.</p>
