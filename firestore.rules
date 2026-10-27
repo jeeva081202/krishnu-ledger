@@ -1,0 +1,14 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Only these two Google/Firebase login emails can read or change the ledger.
+    // Write the emails in small letters, exactly as you created them in Firebase > Authentication.
+    function allowed() {
+      return request.auth != null
+        && request.auth.token.email in ['njeeva854@gmail.com', 'OWNER_EMAIL_HERE'];
+    }
+    match /{document=**} {
+      allow read, write: if allowed();
+    }
+  }
+}
