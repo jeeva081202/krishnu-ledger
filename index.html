@@ -522,6 +522,103 @@ button.lrow:hover{background:var(--surface-2)}
 .fab{background:var(--g-rose)!important;box-shadow:0 12px 26px rgba(0,0,0,.45)!important}
 .bnav button[aria-current="true"]{color:var(--primary)}
 .toast.ok{background:#12301f}
+
+/* ================= FX: aurora, glass, 3D ================= */
+html{background:#06111f}
+body{background:transparent!important}
+#app{position:relative;z-index:1}
+#layer{position:relative;z-index:30}
+:root{--surface:rgba(13,28,48,.72);--surface-2:rgba(18,36,61,.78);--glow:rgba(34,211,238,.35)}
+.aurora{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;background:
+  radial-gradient(1200px 600px at 50% -10%,rgba(14,116,144,.25),transparent 60%),
+  linear-gradient(180deg,#06111f 0%,#071a2e 50%,#06111f 100%)}
+.aurora i{position:absolute;border-radius:50%;filter:blur(70px);opacity:.55;will-change:transform}
+.aurora i:nth-child(1){width:60vmax;height:60vmax;left:-20vmax;top:-15vmax;background:radial-gradient(circle,#0ea5e9 0%,transparent 65%)}
+.aurora i:nth-child(2){width:55vmax;height:55vmax;right:-20vmax;top:20vh;background:radial-gradient(circle,#6366f1 0%,transparent 65%)}
+.aurora i:nth-child(3){width:50vmax;height:50vmax;left:10vw;bottom:-25vmax;background:radial-gradient(circle,#10b981 0%,transparent 65%);opacity:.35}
+.aurora .grid{position:absolute;inset:-50%;background-image:linear-gradient(rgba(148,197,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(148,197,255,.05) 1px,transparent 1px);background-size:44px 44px;transform:perspective(600px) rotateX(60deg) translateY(30%);mask-image:linear-gradient(to top,#000 0%,transparent 55%);-webkit-mask-image:linear-gradient(to top,#000 0%,transparent 55%)}
+.aurora b{position:absolute;bottom:-10px;width:var(--s,3px);height:var(--s,3px);border-radius:50%;background:#a5f3fc;box-shadow:0 0 8px #22d3ee;opacity:0}
+
+/* glass chrome */
+.top{background:linear-gradient(120deg,#0b3a75,#0e7490,#06b6d4,#3b82f6,#0b3a75)!important;background-size:300% 100%!important;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.bnav{background:rgba(6,17,31,.72)!important;-webkit-backdrop-filter:blur(18px) saturate(1.4);backdrop-filter:blur(18px) saturate(1.4);border-top:1px solid rgba(125,211,252,.15)!important}
+.bnav button[aria-current="true"] svg{filter:drop-shadow(0 0 8px var(--glow))}
+.mbar{background:rgba(6,17,31,.78)!important;-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);border-top:1px solid rgba(125,211,252,.15)!important}
+.sheet{background:rgba(9,22,40,.94)!important;-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);border:1px solid rgba(125,211,252,.15)}
+.sheet .sh,.sheet .sf{background:transparent!important}
+.scrim{background:rgba(2,8,18,.6)!important;-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
+
+/* cards */
+.stat,.kpi,.crow,.panel,.ledger,.hero,.card,.scard,.rcard,.tile,.search,.sel,.icon,.btn.line,.empty,.welcome{border-color:rgba(125,211,252,.14)!important}
+.crow,.panel,.ledger,.hero,.card,.scard,.rcard,.stat,.kpi{box-shadow:0 14px 34px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.06)!important}
+.stat.hero,.kpi.brand,.hero .top-band{background:linear-gradient(120deg,#0b3a75,#0e7490,#06b6d4,#2563eb,#0b3a75)!important;background-size:300% 100%!important}
+.stat.hero b,.hero .bal{background:linear-gradient(90deg,#ffffff 0%,#a5f3fc 40%,#ffffff 60%,#ffffff 100%);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent!important;-webkit-text-fill-color:transparent}
+.av{box-shadow:0 6px 16px rgba(0,0,0,.35),0 0 0 2px rgba(255,255,255,.06)}
+
+/* 3D tilt */
+.tilt{transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateZ(0);transition:transform .25s cubic-bezier(.2,.8,.2,1),box-shadow .25s;transform-style:preserve-3d}
+.tilt.tilting{transition:transform .06s linear}
+.crow,.tile,.scard,.rcard{position:relative;overflow:hidden}
+.crow::after,.tile::after,.scard::after,.rcard::after{content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;background:radial-gradient(260px circle at var(--mx,50%) var(--my,-40%),rgba(165,243,252,.16),transparent 45%);opacity:0;transition:opacity .25s}
+.tilting::after{opacity:1}
+.tile.on{box-shadow:0 0 0 1px var(--primary),0 0 22px rgba(34,211,238,.35)!important}
+
+/* buttons */
+.btn{position:relative;overflow:hidden}
+.fab{position:fixed!important;overflow:hidden}
+.btn.primary,.btn.sale,.btn.ok,.fab{background-size:200% 100%!important}
+.btn.primary,.fab{box-shadow:0 8px 22px rgba(6,182,212,.35)}
+.btn.ok{box-shadow:0 8px 22px rgba(16,185,129,.3)}
+.ripple{position:absolute;border-radius:50%;transform:scale(0);background:rgba(255,255,255,.45);pointer-events:none;width:var(--d);height:var(--d);left:var(--x);top:var(--y);margin:calc(var(--d) / -2) 0 0 calc(var(--d) / -2)}
+
+/* lock 3D logo */
+.lock{background:transparent!important}
+.lockcard{background:rgba(9,22,40,.82)!important;-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);border:1px solid rgba(125,211,252,.18);box-shadow:0 40px 80px rgba(0,0,0,.5),0 0 60px rgba(14,165,233,.15)!important}
+.lockcard .lb{background:transparent!important}
+.lmwrap{position:relative;align-self:center;width:200px;max-width:70%;aspect-ratio:1;display:grid;place-items:center;perspective:800px;margin:-4px 0 0}
+.lmwrap::before{content:"";position:absolute;inset:-8px;border-radius:50%;background:conic-gradient(from 0deg,#22d3ee,#3b82f6,#a855f7,#f59e0b,#22d3ee);filter:blur(1px);-webkit-mask:radial-gradient(farthest-side,transparent calc(100% - 4px),#000 calc(100% - 3px));mask:radial-gradient(farthest-side,transparent calc(100% - 4px),#000 calc(100% - 3px))}
+.lmwrap::after{content:"";position:absolute;inset:-18px;border-radius:50%;background:radial-gradient(circle,rgba(34,211,238,.35),transparent 65%);z-index:-1}
+.lmwrap .lm{width:100%!important;max-width:100%!important;border-radius:50%!important;margin:0!important;box-shadow:0 20px 40px rgba(0,0,0,.5)}
+
+/* confetti canvas */
+#fxc{position:fixed;inset:0;z-index:60;pointer-events:none}
+
+@media (prefers-reduced-motion: no-preference){
+  .aurora i:nth-child(1){animation:drift1 22s ease-in-out infinite alternate}
+  .aurora i:nth-child(2){animation:drift2 26s ease-in-out infinite alternate}
+  .aurora i:nth-child(3){animation:drift3 30s ease-in-out infinite alternate}
+  .aurora .grid{animation:gridmove 10s linear infinite}
+  .aurora b{animation:floatup var(--t,12s) linear var(--dl,0s) infinite}
+  @keyframes drift1{to{transform:translate(18vw,14vh) scale(1.15)}}
+  @keyframes drift2{to{transform:translate(-16vw,-10vh) scale(.9)}}
+  @keyframes drift3{to{transform:translate(12vw,-18vh) scale(1.2)}}
+  @keyframes gridmove{to{background-position:0 44px,44px 0}}
+  @keyframes floatup{0%{transform:translateY(0);opacity:0}10%{opacity:.9}90%{opacity:.6}100%{transform:translateY(-105vh) translateX(var(--dx,20px));opacity:0}}
+  .top,.stat.hero,.kpi.brand,.hero .top-band{animation:flow 12s linear infinite}
+  .btn.primary,.btn.sale,.fab{animation:flow 6s linear infinite}
+  @keyframes flow{to{background-position:300% 0}}
+  .stat.hero b,.hero .bal{animation:shine 4s ease-in-out infinite}
+  @keyframes shine{0%,40%{background-position:120% 0}100%{background-position:-120% 0}}
+  @keyframes flip3d{from{opacity:0;transform:perspective(900px) rotateX(-22deg) translateY(28px) scale(.96)}to{opacity:1;transform:none}}
+  .anim .stat,.anim .kpi,.anim .dhead,.anim .hero,.anim .ledger,.anim .panel,.anim .rcard,.anim .scard,.anim .card,.anim .welcome,.anim .phead,.anim .tools,.anim .listhead,.anim .sizehead,.anim .crow{animation-name:flip3d!important;animation-duration:.7s!important;transform-origin:50% 0}
+  .sheet.in{animation:sheet3d .45s cubic-bezier(.2,.9,.2,1)!important;transform-origin:50% 100%}
+  @keyframes sheet3d{from{opacity:0;transform:perspective(1100px) rotateX(16deg) translateY(80px)}to{opacity:1;transform:none}}
+  .fab::before{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:0 0 0 0 rgba(34,211,238,.6);animation:pulse-ring 2.2s ease-out infinite}
+  @keyframes pulse-ring{0%{box-shadow:0 0 0 0 rgba(34,211,238,.55)}100%{box-shadow:0 0 0 18px rgba(34,211,238,0)}}
+  .ripple{animation:rip .6s ease-out forwards}
+  @keyframes rip{to{transform:scale(1);opacity:0}}
+  .lmwrap .lm{animation:float3d 6s ease-in-out infinite}
+  .lmwrap::before{animation:spin 6s linear infinite}
+  .lmwrap::after{animation:breathe 3s ease-in-out infinite}
+  @keyframes float3d{0%,100%{transform:translateY(0) rotateY(-10deg) rotateX(4deg)}50%{transform:translateY(-10px) rotateY(10deg) rotateX(-4deg)}}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  @keyframes breathe{0%,100%{opacity:.6;transform:scale(.95)}50%{opacity:1;transform:scale(1.05)}}
+  .bnav button[aria-current="true"] svg{animation:pop .45s var(--ease)}
+  .anim .chart rect{filter:drop-shadow(0 0 6px rgba(34,211,238,.35))}
+}
+
+.anim *{animation-fill-mode:backwards}
+.anim .stat,.anim .kpi,.anim .dhead,.anim .hero,.anim .ledger,.anim .panel,.anim .rcard,.anim .scard,.anim .card,.anim .welcome,.anim .phead,.anim .tools,.anim .listhead,.anim .sizehead,.anim .crow{animation-fill-mode:backwards!important}
 </style>
 <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js"></script>
@@ -621,7 +718,7 @@ function keepFocus(fn){
 }
 function render(){keepFocus(renderNow)}
 function softRender(){if(S.view==="admin"&&S.unlocked)return;render()}
-function gate(t,m,out){return `<div class="lock"><div class="lockcard"><div class="zari"></div><div class="lb"><img class="lm" src="${LOGO}" alt="Krishnu Cotton Sarees logo"><h1>${esc(t)}</h1><p class="muted lsub" style="margin:0">${esc(m)}</p>${out?`<button class="btn primary block" data-act="lock">Sign out</button>`:""}</div></div></div>`}
+function gate(t,m,out){return `<div class="lock"><div class="lockcard"><div class="zari"></div><div class="lb"><div class="lmwrap"><img class="lm" src="${LOGO}" alt="Krishnu Cotton Sarees logo"></div><h1>${esc(t)}</h1><p class="muted lsub" style="margin:0">${esc(m)}</p>${out?`<button class="btn primary block" data-act="lock">Sign out</button>`:""}</div></div></div>`}
 
 function renderNow(){
   const app=$("#app");
@@ -890,7 +987,7 @@ function renderLock(){
   $("#app").innerHTML=`<div class="lock"><div style="width:min(400px,100%)"><form class="lockcard" id="lockform" novalidate>
     <div class="zari"></div>
     <div class="lb">
-      <img class="lm" src="${LOGO}" alt="Krishnu Cotton Sarees logo">
+      <div class="lmwrap"><img class="lm" src="${LOGO}" alt="Krishnu Cotton Sarees logo"></div>
       <div><h1>${esc(shopName())}</h1><p class="muted lsub" style="margin:4px 0 0">Sign in to open the ledger.</p></div>
       <div class="field"><label for="em">Email</label><input id="em" class="inp" type="email" autocomplete="username" inputmode="email" value="${esc(saved)}"></div>
       <div class="field"><label for="pw">Password</label><div class="pwrow"><input id="pw" class="inp" type="password" autocomplete="current-password"><button type="button" data-act="showpw">Show</button></div></div>
@@ -1210,6 +1307,72 @@ function startData(){
   S.auth.setPersistence(firebase.auth.Auth.Persistence.SESSION).catch(()=>{});
   S.auth.onAuthStateChanged(u=>{S.user=u;S.authReady=true;if(u){S.unlocked=true;startData();render()}else{stopData();S.unlocked=false;S.denied=false;render()}});
 })();
+})();
+</script>
+<script>
+/* ===== FX layer: aurora particles, 3D tilt, ripple, confetti ===== */
+(function(){
+  const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  // aurora + particles
+  const au=document.createElement("div");au.className="aurora";au.setAttribute("aria-hidden","true");
+  au.innerHTML="<i></i><i></i><i></i><div class=\"grid\"></div>";
+  const N=innerWidth<600?14:24;
+  for(let i=0;i<N;i++){const b=document.createElement("b");b.style.left=(Math.random()*100)+"%";b.style.setProperty("--s",(1.5+Math.random()*2.5).toFixed(1)+"px");b.style.setProperty("--t",(9+Math.random()*12).toFixed(1)+"s");b.style.setProperty("--dl",(-Math.random()*20).toFixed(1)+"s");b.style.setProperty("--dx",((Math.random()-.5)*80).toFixed(0)+"px");au.appendChild(b)}
+  document.body.prepend(au);
+  if(reduce)return;
+
+  // 3D tilt
+  const SEL=".stat,.kpi,.hero,.crow,.tile,.scard,.rcard,.lockcard";
+  let cur=null;
+  function apply(el,x,y,strength){
+    const r=el.getBoundingClientRect();const px=(x-r.left)/r.width,py=(y-r.top)/r.height;
+    const max=el.classList.contains("hero")||el.classList.contains("lockcard")?5:strength;
+    el.classList.add("tilt","tilting");
+    el.style.setProperty("--ry",((px-.5)*2*max).toFixed(2)+"deg");
+    el.style.setProperty("--rx",((.5-py)*2*max).toFixed(2)+"deg");
+    el.style.setProperty("--mx",(px*100).toFixed(1)+"%");el.style.setProperty("--my",(py*100).toFixed(1)+"%");
+  }
+  function reset(el){if(!el)return;el.classList.remove("tilting");el.style.setProperty("--rx","0deg");el.style.setProperty("--ry","0deg")}
+  document.addEventListener("pointermove",e=>{
+    if(e.pointerType!=="mouse")return;
+    const el=e.target.closest&&e.target.closest(SEL);
+    if(el!==cur){reset(cur);cur=el}
+    if(el)apply(el,e.clientX,e.clientY,8);
+  },{passive:true});
+  document.addEventListener("pointerdown",e=>{
+    const el=e.target.closest&&e.target.closest(SEL);
+    if(el&&e.pointerType!=="mouse"){cur=el;apply(el,e.clientX,e.clientY,6)}
+    // ripple
+    const b=e.target.closest&&e.target.closest(".btn,.fab,.chip,.bnav button,.crow,.tile");
+    if(b){const r=b.getBoundingClientRect();const d=Math.max(r.width,r.height)*2.2;const s=document.createElement("span");s.className="ripple";
+      s.style.setProperty("--d",d+"px");s.style.setProperty("--x",(e.clientX-r.left)+"px");s.style.setProperty("--y",(e.clientY-r.top)+"px");
+      if(getComputedStyle(b).position==="static")b.style.position="relative";b.style.overflow="hidden";b.appendChild(s);setTimeout(()=>s.remove(),650)}
+  },{passive:true});
+  ["pointerup","pointercancel"].forEach(t=>document.addEventListener(t,e=>{if(e.pointerType!=="mouse"){reset(cur);cur=null}},{passive:true}));
+  document.addEventListener("pointerleave",()=>{reset(cur);cur=null});
+
+  // confetti on successful sale / payment
+  let cv=null,ctx=null,parts=[],raf=0;
+  function confetti(){
+    if(!cv){cv=document.createElement("canvas");cv.id="fxc";document.body.appendChild(cv);ctx=cv.getContext("2d")}
+    const dpr=Math.min(2,devicePixelRatio||1);cv.width=innerWidth*dpr;cv.height=innerHeight*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);
+    const C=["#22d3ee","#3b82f6","#a855f7","#f59e0b","#34d399","#f472b6","#ffffff"];
+    const ox=innerWidth/2,oy=innerHeight*0.62;
+    for(let i=0;i<(innerWidth<600?90:150);i++){const a=-Math.PI/2+(Math.random()-.5)*Math.PI*0.9,v=7+Math.random()*9;
+      parts.push({x:ox,y:oy,vx:Math.cos(a)*v,vy:Math.sin(a)*v,w:5+Math.random()*6,h:3+Math.random()*5,r:Math.random()*6,vr:(Math.random()-.5)*.4,c:C[i%C.length],life:0})}
+    if(!raf)tick();
+  }
+  function tick(){
+    ctx.clearRect(0,0,innerWidth,innerHeight);
+    parts=parts.filter(p=>p.life<140&&p.y<innerHeight+40);
+    for(const p of parts){p.life++;p.vy+=0.28;p.vx*=0.985;p.x+=p.vx;p.y+=p.vy;p.r+=p.vr;
+      ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.r);ctx.globalAlpha=Math.max(0,1-p.life/140);ctx.fillStyle=p.c;ctx.fillRect(-p.w/2,-p.h/2,p.w,p.h);ctx.restore()}
+    if(parts.length)raf=requestAnimationFrame(tick);else{raf=0;ctx.clearRect(0,0,innerWidth,innerHeight)}
+  }
+  new MutationObserver(ms=>{for(const m of ms)for(const n of m.addedNodes){
+    if(n.nodeType===1&&n.classList.contains("toast")&&n.classList.contains("ok")){
+      const t=n.textContent||"";if(/Sale saved|Payment of|Restored|added/.test(t))confetti();
+    }}}).observe(document.body,{childList:true});
 })();
 </script>
 </body>
