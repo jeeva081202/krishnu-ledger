@@ -23,7 +23,7 @@ img{max-width:100%}
 
 /* Layout: Krishnu Cotton Sarees ledger — handloom green header edged with a gold–magenta saree border; customer list pane + ledger pane side by side on wide screens, one pane at a time on phones */
 :root{
-  --bg:#f7f3e9; --surface:#ffffff; --surface-2:#fbf8f1; --ink:#14231b; --muted:#5f6b62; --line:#e6dfcf;
+  --bg:#fcf0f4; --surface:#ffffff; --surface-2:#fdf6f9; --ink:#2a1520; --muted:#7a6470; --line:#f0d9e3;
   --brand:#8a0f45; --brand-ink:#ffffff; --brand-soft:rgba(255,255,255,.75);
   --primary:#a3134f; --primary-ink:#ffffff; --tint:#fbe9f0;
   --zari:#c59a2e; --zari-soft:#f6ecd0; --rose:#b0124f;
@@ -33,7 +33,7 @@ img{max-width:100%}
   --display:"Bricolage Grotesque","Figtree",system-ui,sans-serif;
   --body:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
 }
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+@media (prefers-color-scheme: never){:root:not([data-theme="light"]){
   --bg:#0b1510; --surface:#122019; --surface-2:#172820; --ink:#eef3ee; --muted:#9fb0a5; --line:#24382d;
   --brand:#4a0826; --brand-ink:#ffffff; --brand-soft:rgba(255,255,255,.72);
   --primary:#f39ac0; --primary-ink:#2a0716; --tint:#3a1a28;
@@ -419,7 +419,7 @@ button.lrow:hover{background:var(--surface-2)}
 .btn.sale{background:var(--g-rose);color:#fff}
 .btn.ok{background:var(--g-leaf)}
 .btn.primary{background:var(--g-brand);color:#fff}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .btn.primary{background:var(--primary);color:var(--primary-ink)}}
+@media (prefers-color-scheme: never){:root:not([data-theme="light"]) .btn.primary{background:var(--primary);color:var(--primary-ink)}}
 :root[data-theme="dark"] .btn.primary{background:var(--primary);color:var(--primary-ink)}
 .lrow.pay .desc b::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--ok);margin-right:7px;vertical-align:1px}
 
